@@ -1,11 +1,24 @@
-<p id="notice"><%%= notice %></p>
+<h1>New <%= singular_table_name.titleize %> Data</h1>
 
-<% attributes.reject(&:password_digest?).each do |attribute| -%>
-<p>
-  <strong><%= attribute.human_name %>:</strong>
-  <%%= @<%= singular_table_name %>.<%= attribute.name %> %>
-</p>
+<%% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%%= notice %></p>
+  </div>
+</div>
+<%% end %>
 
-<% end -%>
-<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>) %> |
-<%%= link_to 'Back', <%= index_helper %>_path %>
+<table class="table table-striped">
+  <tbody>
+    <% attributes.reject(&:password_digest?).each do |attribute| -%>
+    <tr>
+      <th><%= attribute.human_name %></th>
+      <td><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
+    </tr>
+    <% end -%>
+  </tbody>
+</table>
+
+
+<%%= link_to 'Edit', edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'btn btn-primary' %>
+<%%= link_to 'Back', <%= index_helper %>_path, class: 'btn btn-secondary' %>
