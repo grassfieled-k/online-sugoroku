@@ -1,0 +1,26 @@
+<h1>New Game Data</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-striped">
+  <tbody>
+        <tr>
+      <th>Game name</th>
+      <td><%= @game.game_name %></td>
+    </tr>
+        <tr>
+      <th>Map</th>
+      <td><%= @game.map_id %></td>
+    </tr>
+      </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_game_path(@game), class: 'btn btn-primary' %>
+<%= link_to 'Back', games_path, class: 'btn btn-secondary' %>
