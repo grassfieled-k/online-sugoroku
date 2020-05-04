@@ -1,0 +1,49 @@
+<h1>Spaces</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-stripe table-responsive">
+  <thead>
+    <tr>
+      <th>Map</th>
+      <th>Position</th>
+      <th>Event</th>
+      <th>Event coefficient</th>
+      <th>Force money</th>
+      <th>Force intelligence</th>
+      <th>Force physicality</th>
+      <th>Force sense</th>
+      <th>Force morality</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @spaces.each do |space| %>
+      <tr>
+        <td><%= space.map_id %></td>
+        <td><%= space.position %></td>
+        <td><%= space.event_id %></td>
+        <td><%= space.event_coefficient %></td>
+        <td><%= space.force_money %></td>
+        <td><%= space.force_intelligence %></td>
+        <td><%= space.force_physicality %></td>
+        <td><%= space.force_sense %></td>
+        <td><%= space.force_morality %></td>
+        <td><%= link_to 'Show', space, class: 'btn btn-sm btn-info' %></td>
+        <td><%= link_to 'Edit', edit_space_path(space), class: 'btn btn-sm btn-primary' %></td>
+        <td><%= link_to 'Destroy', space, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Space', new_space_path, class: 'btn btn-primary' %>
