@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'top/index'
+  get 'top/new'
+  get 'top/continue'
   resources :events
   resources :jobs
   resources :players
