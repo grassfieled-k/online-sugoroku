@@ -1,0 +1,22 @@
+<h1>New Map Data</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-striped">
+  <tbody>
+        <tr>
+      <th>Map name</th>
+      <td><%= @map.map_name %></td>
+    </tr>
+      </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_map_path(@map), class: 'btn btn-primary' %>
+<%= link_to 'Back', maps_path, class: 'btn btn-secondary' %>
