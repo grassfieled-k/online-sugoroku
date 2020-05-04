@@ -10,12 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_063223) do
+ActiveRecord::Schema.define(version: 2020_05_04_074442) do
 
   create_table "games", id: false, force: :cascade do |t|
     t.string "game_id", null: false
     t.string "game_name"
     t.integer "map_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "maps", id: false, force: :cascade do |t|
+    t.string "map_id", null: false
+    t.string "map_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
