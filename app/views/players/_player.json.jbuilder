@@ -1,0 +1,2 @@
+json.extract! player, :id, :player_name, :position, :money, :job_id, :home_id, :intelligence, :physicality, :sense, :morality, :created_at, :updated_at
+json.url player_url(player, format: :json)

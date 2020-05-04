@@ -1,0 +1,54 @@
+<h1>New Player Data</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-striped">
+  <tbody>
+        <tr>
+      <th>Player name</th>
+      <td><%= @player.player_name %></td>
+    </tr>
+        <tr>
+      <th>Position</th>
+      <td><%= @player.position %></td>
+    </tr>
+        <tr>
+      <th>Money</th>
+      <td><%= @player.money %></td>
+    </tr>
+        <tr>
+      <th>Job</th>
+      <td><%= @player.job_id %></td>
+    </tr>
+        <tr>
+      <th>Home</th>
+      <td><%= @player.home_id %></td>
+    </tr>
+        <tr>
+      <th>Intelligence</th>
+      <td><%= @player.intelligence %></td>
+    </tr>
+        <tr>
+      <th>Physicality</th>
+      <td><%= @player.physicality %></td>
+    </tr>
+        <tr>
+      <th>Sense</th>
+      <td><%= @player.sense %></td>
+    </tr>
+        <tr>
+      <th>Morality</th>
+      <td><%= @player.morality %></td>
+    </tr>
+      </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_player_path(@player), class: 'btn btn-primary' %>
+<%= link_to 'Back', players_path, class: 'btn btn-secondary' %>

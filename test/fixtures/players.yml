@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  player_name: MyString
+  position: 1
+  money: 1
+  job_id: 1
+  home_id: 1
+  intelligence: 1
+  physicality: 1
+  sense: 1
+  morality: 1
+
+two:
+  player_name: MyString
+  position: 1
+  money: 1
+  job_id: 1
+  home_id: 1
+  intelligence: 1
+  physicality: 1
+  sense: 1
+  morality: 1
