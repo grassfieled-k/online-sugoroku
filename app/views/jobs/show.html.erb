@@ -1,0 +1,34 @@
+<h1>New Job Data</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-striped">
+  <tbody>
+        <tr>
+      <th>Job name</th>
+      <td><%= @job.job_name %></td>
+    </tr>
+        <tr>
+      <th>Job type</th>
+      <td><%= @job.job_type_id %></td>
+    </tr>
+        <tr>
+      <th>Salary</th>
+      <td><%= @job.salary %></td>
+    </tr>
+        <tr>
+      <th>Explanation</th>
+      <td><%= @job.explanation %></td>
+    </tr>
+      </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_job_path(@job), class: 'btn btn-primary' %>
+<%= link_to 'Back', jobs_path, class: 'btn btn-secondary' %>
