@@ -1,0 +1,46 @@
+<h1>New Event Data</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-striped">
+  <tbody>
+        <tr>
+      <th>Event name</th>
+      <td><%= @event.event_name %></td>
+    </tr>
+        <tr>
+      <th>Message</th>
+      <td><%= @event.message %></td>
+    </tr>
+        <tr>
+      <th>Force money</th>
+      <td><%= @event.force_money %></td>
+    </tr>
+        <tr>
+      <th>Force intelligence</th>
+      <td><%= @event.force_intelligence %></td>
+    </tr>
+        <tr>
+      <th>Force physicality</th>
+      <td><%= @event.force_physicality %></td>
+    </tr>
+        <tr>
+      <th>Force sense</th>
+      <td><%= @event.force_sense %></td>
+    </tr>
+        <tr>
+      <th>Force morality</th>
+      <td><%= @event.force_morality %></td>
+    </tr>
+      </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_event_path(@event), class: 'btn btn-primary' %>
+<%= link_to 'Back', events_path, class: 'btn btn-secondary' %>

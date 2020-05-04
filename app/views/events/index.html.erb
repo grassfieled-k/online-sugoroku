@@ -1,0 +1,45 @@
+<h1>Events</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-stripe table-responsive">
+  <thead>
+    <tr>
+      <th>Event name</th>
+      <th>Message</th>
+      <th>Force money</th>
+      <th>Force intelligence</th>
+      <th>Force physicality</th>
+      <th>Force sense</th>
+      <th>Force morality</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @events.each do |event| %>
+      <tr>
+        <td><%= event.event_name %></td>
+        <td><%= event.message %></td>
+        <td><%= event.force_money %></td>
+        <td><%= event.force_intelligence %></td>
+        <td><%= event.force_physicality %></td>
+        <td><%= event.force_sense %></td>
+        <td><%= event.force_morality %></td>
+        <td><%= link_to 'Show', event, class: 'btn btn-sm btn-info' %></td>
+        <td><%= link_to 'Edit', edit_event_path(event), class: 'btn btn-sm btn-primary' %></td>
+        <td><%= link_to 'Destroy', event, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Event', new_event_path, class: 'btn btn-primary' %>
