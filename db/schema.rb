@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_074442) do
+ActiveRecord::Schema.define(version: 2020_05_04_084802) do
+
+  create_table "events", id: false, force: :cascade do |t|
+    t.string "event_id", null: false
+    t.string "event_name"
+    t.string "message"
+    t.integer "force_money"
+    t.integer "force_intelligence"
+    t.integer "force_physicality"
+    t.integer "force_sense"
+    t.integer "force_morality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "games", id: false, force: :cascade do |t|
     t.string "game_id", null: false
@@ -20,9 +33,48 @@ ActiveRecord::Schema.define(version: 2020_05_04_074442) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "jobs", force: :cascade do |t|
+    t.string "job_name"
+    t.integer "job_type_id"
+    t.integer "salary"
+    t.text "explanation"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "maps", id: false, force: :cascade do |t|
     t.string "map_id", null: false
     t.string "map_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "players", id: false, force: :cascade do |t|
+    t.string "player_id", null: false
+    t.string "player_name"
+    t.integer "position"
+    t.integer "money"
+    t.integer "job_id"
+    t.integer "home_id"
+    t.integer "intelligence"
+    t.integer "physicality"
+    t.integer "sense"
+    t.integer "morality"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "spaces", id: false, force: :cascade do |t|
+    t.string "space_id", null: false
+    t.string "map_id"
+    t.integer "position"
+    t.string "event_id"
+    t.integer "event_coefficient"
+    t.integer "force_money"
+    t.integer "force_intelligence"
+    t.integer "force_physicality"
+    t.integer "force_sense"
+    t.integer "force_morality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
