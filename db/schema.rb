@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_04_084802) do
+ActiveRecord::Schema.define(version: 2020_05_10_141832) do
 
   create_table "events", id: false, force: :cascade do |t|
     t.string "event_id", null: false
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_05_04_084802) do
   create_table "games", id: false, force: :cascade do |t|
     t.string "game_id", null: false
     t.string "game_name"
-    t.integer "map_id"
+    t.string "map_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
