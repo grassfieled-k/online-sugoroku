@@ -1,0 +1,35 @@
+<h1>Colors</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-stripe table-responsive">
+  <thead>
+    <tr>
+      <th>Color</th>
+      <th>For player number</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @colors.each do |color| %>
+      <tr>
+        <td><%= color.color %></td>
+        <td><%= color.for_player_number %></td>
+        <td><%= link_to 'Show', color, class: 'btn btn-sm btn-info' %></td>
+        <td><%= link_to 'Edit', edit_color_path(color), class: 'btn btn-sm btn-primary' %></td>
+        <td><%= link_to 'Destroy', color, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Color', new_color_path, class: 'btn btn-primary' %>

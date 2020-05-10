@@ -1,0 +1,26 @@
+<h1>New Color Data</h1>
+
+<% unless notice.blank? %>
+<div class="card bg-light mb-3">
+  <div class="card-body">
+    <p id="notice" class="m-0"><%= notice %></p>
+  </div>
+</div>
+<% end %>
+
+<table class="table table-striped">
+  <tbody>
+        <tr>
+      <th>Color</th>
+      <td><%= @color.color %></td>
+    </tr>
+        <tr>
+      <th>For player number</th>
+      <td><%= @color.for_player_number %></td>
+    </tr>
+      </tbody>
+</table>
+
+
+<%= link_to 'Edit', edit_color_path(@color), class: 'btn btn-primary' %>
+<%= link_to 'Back', colors_path, class: 'btn btn-secondary' %>
