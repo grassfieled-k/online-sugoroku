@@ -4,6 +4,7 @@ class GamesController < ApplicationController
   # GET /games
   def index
     @games = Game.all
+    @maps = Map.all
   end
 
   # GET /games/1
