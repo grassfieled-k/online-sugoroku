@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_144102) do
+ActiveRecord::Schema.define(version: 2020_05_10_165600) do
+
+  create_table "colors", force: :cascade do |t|
+    t.string "color"
+    t.integer "for_player_number"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "events", id: false, force: :cascade do |t|
     t.string "event_id", null: false
