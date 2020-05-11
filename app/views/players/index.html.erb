@@ -12,6 +12,7 @@
   <thead>
     <tr>
       <th>Player name</th>
+      <th>Game id</th>
       <th>Position</th>
       <th>Money</th>
       <th>Job</th>
@@ -28,6 +29,7 @@
     <% @players.each do |player| %>
       <tr>
         <td><%= player.player_name %></td>
+        <td><%= player.game_id %></td>
         <td><%= player.position %></td>
         <td><%= player.money %></td>
         <td><%= player.job_id %></td>
