@@ -125,3 +125,31 @@ $sizes: map-merge(
 :not(nav) > .container {
   padding-top: 15px;
 }
+
+
+/*
+ * Additional
+ */
+.add-table-col-status {
+  min-width: 2em;
+}
+
+.add-card-space {
+  float: none;
+  width: 10em;
+  margin: 0 auto;
+}
+
+
+.add-card-space .list-group-item {
+  height: 10em;
+}
+
+.add-wrapper-stoped-users {
+  font-size: 1.4em;
+  position: absolute;
+  top: -0.5em;
+  left: -0.2em;
+  padding-right: 0.3em;
+  background-color: white;
+}

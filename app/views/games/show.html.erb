@@ -1,57 +1,55 @@
-<h1><%= @game.game_name %></h1>
-
 <div class="row">
-  <% @players.each_with_index do |player, i| %>
-    <div class="col-3">
-      <table class="table table-sm table-<%= @colors.find_by(for_player_number: i + 1).color %>">
-        <thead>
-          <tr>
-            <th class="pl-3"><%= player.player_name %></th>
-            <th class="text-right pr-3"><%= player.money || 0 %></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="pl-3">job_id</td>
-            <td class="text-right pr-3"><%= player.job_id || 0 %></td>
-          </tr>
-          <tr>
-            <td class="pl-3">home_id</td>
-            <td class="text-right pr-3"><%= player.home_id || 0 %></td>
-          </tr>
-          <tr>
-            <td class="pl-3">intelligence</td>
-            <td class="text-right pr-3"><%= player.intelligence || 0 %></td>
-          </tr>
-          <tr>
-            <td class="pl-3">physicality</td>
-            <td class="text-right pr-3"><%= player.physicality || 0 %></td>
-          </tr>
-          <tr>
-            <td class="pl-3">sense</td>
-            <td class="text-right pr-3"><%= player.sense || 0 %></td>
-          </tr>
-          <tr>
-            <td class="pl-3">morality</td>
-            <td class="text-right pr-3"><%= player.morality || 0 %></td>
-          </tr>
-        </tbody>
-      </table>
+  <div class="col-12 col-md-6">
+    <div class="d-none d-lg-block">
+      <h1><%= @game.game_name %></h1>
+      <p class="lead"><%= @map.map_name %></p>
     </div>
-  <% end %>
-</div>
-
-<div class="row mt-3 mb-3">
-  <% @spaces.each do |space| %>
-    <div class="card shadow-sm w-10">
-      <div class="card-header">
-        <%= space.position %>
-      </div>
-      <div class="card-body">
+    <table class="table table-bordered table-sm shadow-sm">
+      <thead class="table-dark text-center">
+          <th><i class="fas fa-user-circle"></i></th>
+          <th><i class="fas fa-money-check-alt"></i></th>
+          <th class="add-table-col-status"><i class="fas fa-graduation-cap"></i></th>
+          <th class="add-table-col-status"><i class="fas fa-dumbbell"></i></th>
+          <th class="add-table-col-status"><i class="fas fa-star"></i></th>
+          <th class="add-table-col-status"><i class="fas fa-user-tie"></i></th>
+      </thead>
+      <tbody>
         <% @players.each_with_index do |player, i| %>
-          <%= space.position == player.position ? '<i class="fas fa-user-circle text-'.html_safe + @colors.find_by(for_player_number: i + 1).color + '"></i>'.html_safe : '' %>
+        <% player_color = @colors.find_by(for_player_number: i + 1).color %>
+          <tr class="text-<%= player_color %>">
+            <td>
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <%= player.player_name %>
+                </div>
+                <div class="col-12 col-md-6">
+                  <span class="text-muted small"><%= player.job_id || 'No job' %></span>
+                </div>
+              </div>
+            </td>
+            <td class="text-right align-middle"><%= player.money || 0 %></td>
+            <td class="text-center align-middle"><%= player.intelligence || 0 %></td>
+            <td class="text-center align-middle"><%= player.physicality || 0 %></td>
+            <td class="text-center align-middle"><%= player.sense || 0 %></td>
+            <td class="text-center align-middle"><%= player.morality || 0 %></td>
+          </tr>
         <% end %>
-      </div>
+      </tbody>
+    </table>
+  </div>
+  <div class="col-12 col-md-6">
+    <div class="card add-card-space shadow-sm">
+      <ul class="list-group list-group-flush">
+        <% @spaces.each do |space| %>
+          <li class="list-group-item">
+            <div class="add-wrapper-stoped-users">
+              <% @players.each_with_index do |player, i| %>
+                <%= space.position == player.position ? '<i class="fas fa-user-circle text-'.html_safe + @colors.find_by(for_player_number: i + 1).color + '"></i>'.html_safe : '' %>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
     </div>
-  <% end %>
+  </div>
 </div>

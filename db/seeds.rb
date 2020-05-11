@@ -26,7 +26,7 @@ Game.create(
 ################################################
 # Spaces
 ################################################
-10.times do |i|
+100.times do |i|
   Space.create(
     map_id:            Map.find_by(map_name: 'Map 1').map_id,
     position:          i + 1,
@@ -46,7 +46,7 @@ end
   Player.create(
     game_id:     Game.find_by(game_name: "Game 1").game_id,
     player_name: "Player #{i + 1}",
-    position:    i + 1,
+    position:    1,
     money:       100000
   )
 end
