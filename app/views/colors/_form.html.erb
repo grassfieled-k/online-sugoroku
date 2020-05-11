@@ -1,0 +1,25 @@
+<%= bootstrap_form_with(model: color, local: true, layout: :horizontal) do |form| %>
+  <% if color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(color.errors.count, "error") %> prohibited this color from being saved:</h2>
+
+      <ul>
+      <% color.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.text_field :color %>
+  </div>
+
+  <div class="field">
+    <%= form.number_field :for_player_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class: 'btn btn-primary' %>
+  </div>
+<% end %>

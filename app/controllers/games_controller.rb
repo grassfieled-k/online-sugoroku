@@ -4,10 +4,15 @@ class GamesController < ApplicationController
   # GET /games
   def index
     @games = Game.all
+    @maps = Map.all
   end
 
   # GET /games/1
   def show
+    @players = Player.where(game_id: @game.game_id)
+    @map = Map.find_by(map_id: @game.map_id)
+    @spaces = Space.where(map_id: @map.map_id)
+    @colors = Color.all
   end
 
   # GET /games/new

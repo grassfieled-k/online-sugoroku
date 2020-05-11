@@ -1,26 +1,57 @@
-<h1>New Game Data</h1>
+<h1><%= @game.game_name %></h1>
 
-<% unless notice.blank? %>
-<div class="card bg-light mb-3">
-  <div class="card-body">
-    <p id="notice" class="m-0"><%= notice %></p>
-  </div>
+<div class="row">
+  <% @players.each_with_index do |player, i| %>
+    <div class="col-3">
+      <table class="table table-sm table-<%= @colors.find_by(for_player_number: i + 1).color %>">
+        <thead>
+          <tr>
+            <th class="pl-3"><%= player.player_name %></th>
+            <th class="text-right pr-3"><%= player.money || 0 %></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="pl-3">job_id</td>
+            <td class="text-right pr-3"><%= player.job_id || 0 %></td>
+          </tr>
+          <tr>
+            <td class="pl-3">home_id</td>
+            <td class="text-right pr-3"><%= player.home_id || 0 %></td>
+          </tr>
+          <tr>
+            <td class="pl-3">intelligence</td>
+            <td class="text-right pr-3"><%= player.intelligence || 0 %></td>
+          </tr>
+          <tr>
+            <td class="pl-3">physicality</td>
+            <td class="text-right pr-3"><%= player.physicality || 0 %></td>
+          </tr>
+          <tr>
+            <td class="pl-3">sense</td>
+            <td class="text-right pr-3"><%= player.sense || 0 %></td>
+          </tr>
+          <tr>
+            <td class="pl-3">morality</td>
+            <td class="text-right pr-3"><%= player.morality || 0 %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  <% end %>
 </div>
-<% end %>
 
-<table class="table table-striped">
-  <tbody>
-        <tr>
-      <th>Game name</th>
-      <td><%= @game.game_name %></td>
-    </tr>
-        <tr>
-      <th>Map</th>
-      <td><%= @game.map_id %></td>
-    </tr>
-      </tbody>
-</table>
-
-
-<%= link_to 'Edit', edit_game_path(@game), class: 'btn btn-primary' %>
-<%= link_to 'Back', games_path, class: 'btn btn-secondary' %>
+<div class="row mt-3 mb-3">
+  <% @spaces.each do |space| %>
+    <div class="card shadow-sm w-10">
+      <div class="card-header">
+        <%= space.position %>
+      </div>
+      <div class="card-body">
+        <% @players.each_with_index do |player, i| %>
+          <%= space.position == player.position ? '<i class="fas fa-user-circle text-'.html_safe + @colors.find_by(for_player_number: i + 1).color + '"></i>'.html_safe : '' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+</div>

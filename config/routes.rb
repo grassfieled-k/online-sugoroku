@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :colors
   get 'top', to: 'top#index'
   get 'top/index'
   get 'top/new'
