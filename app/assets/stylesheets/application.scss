@@ -125,3 +125,11 @@ $sizes: map-merge(
 :not(nav) > .container {
   padding-top: 15px;
 }
+
+
+/*
+ * Additional
+ */
+.add-table-col-status {
+  min-width: 2em;
+}
