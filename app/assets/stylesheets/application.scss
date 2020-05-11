@@ -119,12 +119,19 @@ $sizes: map-merge(
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+
+
 /*
  * Overwrite Bootstrap 4
  */
+body {
+  padding-top: 56px;
+}
+
 :not(nav) > .container {
   padding-top: 15px;
 }
+
 
 
 /*
