@@ -41,12 +41,29 @@
     <div class="card add-card-space shadow-sm">
       <ul class="list-group list-group-flush">
         <% @spaces.each do |space| %>
-          <li class="list-group-item">
+          <li class="list-group-item d-flex align-items-center justify-content-center">
             <div class="add-wrapper-stoped-users">
               <% @players.each_with_index do |player, i| %>
-                <%= space.position == player.position ? '<i class="fas fa-user-circle text-'.html_safe + @colors.find_by(for_player_number: i + 1).color + ' text-shadow"></i>'.html_safe : '' %>
+                <%= space.position == player.position ? "<i class=\"fas fa-user-circle text-#{@colors.find_by(for_player_number: i + 1).color} add-text-shadow\"></i>".html_safe : '' %>
               <% end %>
             </div>
+            <%=
+              if !space.event_type.blank? || !space.event_id?
+                event_type = space.event_type || @events.find_by(event_id: space.event_id).event_type
+                case event_type
+                  when 1
+                    space_icon       = 'fa-smile'
+                    space_icon_color = 'primary'
+                  when 2
+                    space_icon       = 'fa-frown'
+                    space_icon_color = 'danger'
+                end
+              elsif !space.pool_id?
+                space_icon       = 'fa-question'
+                space_icon_color = 'warning'
+              end
+              "<i class=\"fas #{space_icon} add-space-icon text-#{space_icon_color} add-text-shadow\"></i>".html_safe
+            %>
           </li>
         <% end %>
       </ul>

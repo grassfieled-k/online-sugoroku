@@ -11,7 +11,7 @@ class GamesController < ApplicationController
   def show
     @players = Player.where(game_id: @game.game_id)
     @map = Map.find_by(map_id: @game.map_id)
-    @spaces = Space.where(map_id: @map.map_id)
+    @spaces = Space.where(map_id: @map.map_id).order(position: "ASC")
     @colors = Color.all
   end
 
