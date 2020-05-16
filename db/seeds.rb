@@ -26,12 +26,11 @@ Game.create(
 ################################################
 # Spaces
 ################################################
-100.times do |i|
+99.times do |i|
   Space.create(
-    map_id:            Map.find_by(map_name: 'Map 1').map_id,
-    position:          i + 1,
-    event_coefficient: 1,
-    force_money:       10000
+    map_id:     Map.find_by(map_name: 'Map 1').map_id,
+    position:   i + 1,
+    event_type: rand(2) + 1
   )
 end
 
@@ -44,10 +43,14 @@ end
 ################################################
 4.times do |i|
   Player.create(
-    game_id:     Game.find_by(game_name: "Game 1").game_id,
-    player_name: "Player #{i + 1}",
-    position:    1,
-    money:       100000
+    game_id:      Game.find_by(game_name: 'Game 1').game_id,
+    player_name:  "Player #{i + 1}",
+    position:     1,
+    money:        100000,
+    intelligence: 10,
+    strength:     10,
+    sense:        10,
+    morality:     10
   )
 end
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_10_165600) do
+ActiveRecord::Schema.define(version: 2020_05_16_102455) do
 
   create_table "colors", force: :cascade do |t|
     t.string "color"
@@ -22,12 +22,12 @@ ActiveRecord::Schema.define(version: 2020_05_10_165600) do
   create_table "events", id: false, force: :cascade do |t|
     t.string "event_id", null: false
     t.string "event_name"
-    t.string "message"
-    t.integer "force_money"
-    t.integer "force_intelligence"
-    t.integer "force_physicality"
-    t.integer "force_sense"
-    t.integer "force_morality"
+    t.integer "event_type"
+    t.text "message"
+    t.integer "default_money"
+    t.integer "default_intelligence"
+    t.integer "default_strength"
+    t.integer "default_morality"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_05_10_165600) do
     t.integer "job_id"
     t.integer "home_id"
     t.integer "intelligence"
-    t.integer "physicality"
+    t.integer "strength"
     t.integer "sense"
     t.integer "morality"
     t.datetime "created_at", null: false
@@ -76,13 +76,8 @@ ActiveRecord::Schema.define(version: 2020_05_10_165600) do
     t.string "space_id", null: false
     t.string "map_id"
     t.integer "position"
-    t.string "event_id"
-    t.integer "event_coefficient"
-    t.integer "force_money"
-    t.integer "force_intelligence"
-    t.integer "force_physicality"
-    t.integer "force_sense"
-    t.integer "force_morality"
+    t.integer "event_type"
+    t.string "events_pool"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

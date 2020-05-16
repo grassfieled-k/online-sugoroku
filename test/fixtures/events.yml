@@ -2,18 +2,18 @@
 
 one:
   event_name: MyString
-  message: MyString
-  force_money: 1
-  force_intelligence: 1
-  force_physicality: 1
-  force_sense: 1
-  force_morality: 1
+  event_type: 1
+  message: MyText
+  default_money: 1
+  default_intelligence: 1
+  default_strength: 1
+  default_morality: 1
 
 two:
   event_name: MyString
-  message: MyString
-  force_money: 1
-  force_intelligence: 1
-  force_physicality: 1
-  force_sense: 1
-  force_morality: 1
+  event_type: 1
+  message: MyText
+  default_money: 1
+  default_intelligence: 1
+  default_strength: 1
+  default_morality: 1

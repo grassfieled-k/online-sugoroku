@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  resources :colors
+  resources :events
   get 'top', to: 'top#index'
   get 'top/index'
   get 'top/new'
   get 'top/continue'
+  resources :colors
   resources :events
   resources :jobs
   resources :players

@@ -7,7 +7,7 @@ one:
   job_id: 1
   home_id: 1
   intelligence: 1
-  physicality: 1
+  strength: 1
   sense: 1
   morality: 1
 
@@ -18,6 +18,6 @@ two:
   job_id: 1
   home_id: 1
   intelligence: 1
-  physicality: 1
+  strength: 1
   sense: 1
   morality: 1

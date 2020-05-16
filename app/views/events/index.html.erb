@@ -12,12 +12,12 @@
   <thead>
     <tr>
       <th>Event name</th>
+      <th>Event type</th>
       <th>Message</th>
-      <th>Force money</th>
-      <th>Force intelligence</th>
-      <th>Force physicality</th>
-      <th>Force sense</th>
-      <th>Force morality</th>
+      <th>Default money</th>
+      <th>Default intelligence</th>
+      <th>Default strength</th>
+      <th>Default morality</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,12 +26,12 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.event_name %></td>
+        <td><%= event.event_type %></td>
         <td><%= event.message %></td>
-        <td><%= event.force_money %></td>
-        <td><%= event.force_intelligence %></td>
-        <td><%= event.force_physicality %></td>
-        <td><%= event.force_sense %></td>
-        <td><%= event.force_morality %></td>
+        <td><%= event.default_money %></td>
+        <td><%= event.default_intelligence %></td>
+        <td><%= event.default_strength %></td>
+        <td><%= event.default_morality %></td>
         <td><%= link_to 'Show', event, class: 'btn btn-sm btn-info' %></td>
         <td><%= link_to 'Edit', edit_event_path(event), class: 'btn btn-sm btn-primary' %></td>
         <td><%= link_to 'Destroy', event, class: 'btn btn-sm btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %></td>
