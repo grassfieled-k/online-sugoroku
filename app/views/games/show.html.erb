@@ -44,7 +44,7 @@
           <li class="list-group-item">
             <div class="add-wrapper-stoped-users">
               <% @players.each_with_index do |player, i| %>
-                <%= space.position == player.position ? '<i class="fas fa-user-circle text-'.html_safe + @colors.find_by(for_player_number: i + 1).color + '"></i>'.html_safe : '' %>
+                <%= space.position == player.position ? '<i class="fas fa-user-circle text-'.html_safe + @colors.find_by(for_player_number: i + 1).color + ' text-shadow"></i>'.html_safe : '' %>
               <% end %>
             </div>
           </li>
