@@ -14,14 +14,10 @@ class SpacesTest < ApplicationSystemTestCase
     visit spaces_url
     click_on "New Space"
 
-    fill_in "Event coefficient", with: @space.event_coefficient
     fill_in "Event", with: @space.event_id
-    fill_in "Force intelligence", with: @space.force_intelligence
-    fill_in "Force money", with: @space.force_money
-    fill_in "Force morality", with: @space.force_morality
-    fill_in "Force physicality", with: @space.force_physicality
-    fill_in "Force sense", with: @space.force_sense
+    fill_in "Event type", with: @space.event_type
     fill_in "Map", with: @space.map_id
+    fill_in "Pool", with: @space.pool_id
     fill_in "Position", with: @space.position
     click_on "Create Space"
 
@@ -33,14 +29,10 @@ class SpacesTest < ApplicationSystemTestCase
     visit spaces_url
     click_on "Edit", match: :first
 
-    fill_in "Event coefficient", with: @space.event_coefficient
     fill_in "Event", with: @space.event_id
-    fill_in "Force intelligence", with: @space.force_intelligence
-    fill_in "Force money", with: @space.force_money
-    fill_in "Force morality", with: @space.force_morality
-    fill_in "Force physicality", with: @space.force_physicality
-    fill_in "Force sense", with: @space.force_sense
+    fill_in "Event type", with: @space.event_type
     fill_in "Map", with: @space.map_id
+    fill_in "Pool", with: @space.pool_id
     fill_in "Position", with: @space.position
     click_on "Update Space"
 

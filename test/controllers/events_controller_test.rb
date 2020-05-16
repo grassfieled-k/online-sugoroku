@@ -17,7 +17,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create event" do
     assert_difference('Event.count') do
-      post events_url, params: { event: { event_name: @event.event_name, force_intelligence: @event.force_intelligence, force_money: @event.force_money, force_morality: @event.force_morality, force_physicality: @event.force_physicality, force_sense: @event.force_sense, message: @event.message } }
+      post events_url, params: { event: { default_intelligence: @event.default_intelligence, default_money: @event.default_money, default_morality: @event.default_morality, default_strength: @event.default_strength, event_name: @event.event_name, event_type: @event.event_type, message: @event.message } }
     end
 
     assert_redirected_to event_url(Event.last)
@@ -34,7 +34,7 @@ class EventsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update event" do
-    patch event_url(@event), params: { event: { event_name: @event.event_name, force_intelligence: @event.force_intelligence, force_money: @event.force_money, force_morality: @event.force_morality, force_physicality: @event.force_physicality, force_sense: @event.force_sense, message: @event.message } }
+    patch event_url(@event), params: { event: { default_intelligence: @event.default_intelligence, default_money: @event.default_money, default_morality: @event.default_morality, default_strength: @event.default_strength, event_name: @event.event_name, event_type: @event.event_type, message: @event.message } }
     assert_redirected_to event_url(@event)
   end
 

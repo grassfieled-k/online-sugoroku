@@ -3,21 +3,13 @@
 one:
   map_id: MyString
   position: 1
+  event_type: 1
+  pool_id: MyString
   event_id: MyString
-  event_coefficient: 1
-  force_money: 1
-  force_intelligence: 1
-  force_physicality: 1
-  force_sense: 1
-  force_morality: 1
 
 two:
   map_id: MyString
   position: 1
+  event_type: 1
+  pool_id: MyString
   event_id: MyString
-  event_coefficient: 1
-  force_money: 1
-  force_intelligence: 1
-  force_physicality: 1
-  force_sense: 1
-  force_morality: 1

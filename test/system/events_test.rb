@@ -14,12 +14,12 @@ class EventsTest < ApplicationSystemTestCase
     visit events_url
     click_on "New Event"
 
+    fill_in "Default intelligence", with: @event.default_intelligence
+    fill_in "Default money", with: @event.default_money
+    fill_in "Default morality", with: @event.default_morality
+    fill_in "Default strength", with: @event.default_strength
     fill_in "Event name", with: @event.event_name
-    fill_in "Force intelligence", with: @event.force_intelligence
-    fill_in "Force money", with: @event.force_money
-    fill_in "Force morality", with: @event.force_morality
-    fill_in "Force physicality", with: @event.force_physicality
-    fill_in "Force sense", with: @event.force_sense
+    fill_in "Event type", with: @event.event_type
     fill_in "Message", with: @event.message
     click_on "Create Event"
 
@@ -31,12 +31,12 @@ class EventsTest < ApplicationSystemTestCase
     visit events_url
     click_on "Edit", match: :first
 
+    fill_in "Default intelligence", with: @event.default_intelligence
+    fill_in "Default money", with: @event.default_money
+    fill_in "Default morality", with: @event.default_morality
+    fill_in "Default strength", with: @event.default_strength
     fill_in "Event name", with: @event.event_name
-    fill_in "Force intelligence", with: @event.force_intelligence
-    fill_in "Force money", with: @event.force_money
-    fill_in "Force morality", with: @event.force_morality
-    fill_in "Force physicality", with: @event.force_physicality
-    fill_in "Force sense", with: @event.force_sense
+    fill_in "Event type", with: @event.event_type
     fill_in "Message", with: @event.message
     click_on "Update Event"
 
