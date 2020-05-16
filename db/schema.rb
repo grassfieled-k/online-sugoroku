@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_102455) do
     t.integer "job_id"
     t.integer "home_id"
     t.integer "intelligence"
-    t.integer "physicality"
+    t.integer "strength"
     t.integer "sense"
     t.integer "morality"
     t.datetime "created_at", null: false

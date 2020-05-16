@@ -48,7 +48,7 @@ end
     position:     1,
     money:        100000,
     intelligence: 10,
-    physicality:  10,
+    strength:     10,
     sense:        10,
     morality:     10
   )

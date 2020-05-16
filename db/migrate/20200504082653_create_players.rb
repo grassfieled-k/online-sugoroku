@@ -7,7 +7,7 @@ class CreatePlayers < ActiveRecord::Migration[5.2]
       t.integer :job_id
       t.integer :home_id
       t.integer :intelligence
-      t.integer :physicality
+      t.integer :strength
       t.integer :sense
       t.integer :morality
 

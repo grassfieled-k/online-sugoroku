@@ -19,7 +19,7 @@ class PlayersTest < ApplicationSystemTestCase
     fill_in "Job", with: @player.job_id
     fill_in "Money", with: @player.money
     fill_in "Morality", with: @player.morality
-    fill_in "Physicality", with: @player.physicality
+    fill_in "Strength", with: @player.strength
     fill_in "Player name", with: @player.player_name
     fill_in "Position", with: @player.position
     fill_in "Sense", with: @player.sense
@@ -38,7 +38,7 @@ class PlayersTest < ApplicationSystemTestCase
     fill_in "Job", with: @player.job_id
     fill_in "Money", with: @player.money
     fill_in "Morality", with: @player.morality
-    fill_in "Physicality", with: @player.physicality
+    fill_in "Strength", with: @player.strength
     fill_in "Player name", with: @player.player_name
     fill_in "Position", with: @player.position
     fill_in "Sense", with: @player.sense
