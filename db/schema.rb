@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_16_102455) do
+ActiveRecord::Schema.define(version: 2020_05_17_183354) do
 
   create_table "colors", force: :cascade do |t|
     t.string "color"
@@ -70,6 +70,7 @@ ActiveRecord::Schema.define(version: 2020_05_16_102455) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "game_id"
+    t.integer "player_no"
   end
 
   create_table "spaces", id: false, force: :cascade do |t|
