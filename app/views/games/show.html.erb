@@ -14,8 +14,8 @@
           <th class="add-table-col-status"><i class="fas fa-user-tie"></i></th>
       </thead>
       <tbody>
-        <% @players.each_with_index do |player, i| %>
-        <% player_color = @colors.find_by(for_player_number: i + 1).color %>
+        <% @players.each do |player| %>
+        <% player_color = @colors.find_by(for_player_number: player.player_no).color %>
           <tr class="text-<%= player_color %>">
             <td>
               <div class="row">
@@ -43,8 +43,9 @@
         <% @spaces.each do |space| %>
           <li class="list-group-item d-flex align-items-center justify-content-center">
             <div class="add-wrapper-stoped-users">
-              <% @players.each_with_index do |player, i| %>
-                <%= space.position == player.position ? "<i class=\"fas fa-user-circle text-#{@colors.find_by(for_player_number: i + 1).color} add-text-shadow\"></i>".html_safe : '' %>
+              <% @players.each do |player| %>
+              <% player_color = @colors.find_by(for_player_number: player.player_no).color %>
+                <%= space.position == player.position ? "<i class=\"fas fa-user-circle text-#{player_color} add-text-shadow\"></i>".html_safe : '' %>
               <% end %>
             </div>
             <%=
@@ -78,9 +79,9 @@
           <h5 class="modal-title">Choose Player</h5>
         </div>
         <div class="modal-body">
-          <% @players.each_with_index do |player, i| %>
-          <% player_color = @colors.find_by(for_player_number: i + 1).color %>
-              <button class="btn btn-white btn-block text-<%= player_color %> border-<%= player_color %>"><%= player.player_name %></button>
+          <% @players.each do |player| %>
+          <% player_color = @colors.find_by(for_player_number: player.player_no).color %>
+              <button id="<%= player.player_id %>" class="js-btn-players btn btn-white btn-block text-<%= player_color %> border-<%= player_color %>"><%= player.player_name %></button>
           <% end %>
         </div>
       </div>
