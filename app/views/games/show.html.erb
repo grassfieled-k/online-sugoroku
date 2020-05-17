@@ -69,4 +69,21 @@
       </ul>
     </div>
   </div>
+
+  <!-- Modal windows -->
+  <div id="modal-choose-player" class="modal fade" tabindex="-1" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Choose Player</h5>
+        </div>
+        <div class="modal-body">
+          <% @players.each_with_index do |player, i| %>
+          <% player_color = @colors.find_by(for_player_number: i + 1).color %>
+              <button class="btn btn-white btn-block text-<%= player_color %> border-<%= player_color %>"><%= player.player_name %></button>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
