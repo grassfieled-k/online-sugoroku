@@ -13,6 +13,12 @@ class GamesController < ApplicationController
     @map = Map.find_by(map_id: @game.map_id)
     @spaces = Space.where(map_id: @map.map_id).order(position: "ASC")
     @colors = Color.all
+
+    # Gon
+    gon.players = @players.to_json()
+    gon.map     = @map.to_json()
+    gon.spaces  = @spaces.to_json()
+    gon.colors  = @colors.to_json()
   end
 
   # GET /games/new

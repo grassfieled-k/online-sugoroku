@@ -2,7 +2,7 @@
   <div class="col-12 col-md-6">
     <div class="d-none d-lg-block">
       <h1><%= @game.game_name %></h1>
-      <p class="lead"><%= @map.map_name %></p>
+      <p id="my-player-name" class="lead">Unknown Player</p>
     </div>
     <table class="table table-bordered table-sm shadow-sm">
       <thead class="table-dark text-center">
@@ -81,7 +81,7 @@
         <div class="modal-body">
           <% @players.each do |player| %>
           <% player_color = @colors.find_by(for_player_number: player.player_no).color %>
-              <button id="<%= player.player_id %>" class="js-btn-players btn btn-white btn-block text-<%= player_color %> border-<%= player_color %>"><%= player.player_name %></button>
+            <button class="js-btn-players btn btn-white btn-block text-<%= player_color %> border-<%= player_color %>" data-player-id="<%= player.player_id %>"><%= player.player_name %></button>
           <% end %>
         </div>
       </div>
